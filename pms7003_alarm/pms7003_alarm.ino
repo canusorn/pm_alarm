@@ -249,10 +249,11 @@ void loop()
 
         display_update(); // update OLED
 
+        // add alarm
         if(data.PM_AE_UG_2_5 > atoi(alarmParamValue)){
           pinMode(D6,OUTPUT);
           digitalWrite(D6,LOW);
-        }else if((data.PM_AE_UG_2_5 < atoi(alarmParamValue)-5){
+        }else if(data.PM_AE_UG_2_5 < atoi(alarmParamValue)-5){
           pinMode(D6,OUTPUT);
           digitalWrite(D6,HIGH);
         }
